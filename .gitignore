@@ -4,6 +4,9 @@ syntax: glob
 # mac
 .DS_STORE
 
+# vim
+*.swp
+
 # python
 *.pyc
 *.egg-info
