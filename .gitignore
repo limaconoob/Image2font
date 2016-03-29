@@ -1,6 +1,12 @@
 # use glob syntax
 syntax: glob
 
+# root
+*.ttf
+*.png
+*.pnm
+*.svg
+
 # mac
 .DS_STORE
 
