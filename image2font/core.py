@@ -1,7 +1,3 @@
-from PIL import Image;
-
-from resizeimage import resizeimage;
-
 import fontforge;
 import subprocess;
 
