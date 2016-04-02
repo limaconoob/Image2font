@@ -5,14 +5,7 @@
 [travis-badge]: https://travis-ci.org/limaconoob/Image2font.svg?branch=master&style=flat-square
 [travis]: https://travis-ci.org/limaconoob/Image2font
 
-#### How to local use:
-##### Example:
-```shell
-git clone https://github.com/limaconoob/Image2font.git image2font && cd image2font
-python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png
-```
-
-##### CLI:
+##### Usage:
 For more information, see the **help**'s command:
 ```text
 Usage:  [options] arg1.png [...]
@@ -39,6 +32,12 @@ Options:
                         Is the name of font.
 ```
 
+By example:
+```shell
+git clone https://github.com/limaconoob/Image2font.git image2font && cd image2font
+python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png
+```
+
 #### Dependencies:
 Many thanks goes to:
 
@@ -47,3 +46,7 @@ Many thanks goes to:
 * [fontforge](https://github.com/fontforge/fontforge).
 * [convert](https://github.com/ImageMagick/ImageMagick).
 * [potrace](http://potrace.sourceforge.net).
+
+#### License:
+
+**image2font**'s code in this repo uses the [GNU GPL v3](http://www.gnu.org/licenses/gpl-3.0.html) [license](https://raw.githubusercontent.com/limaconoob/Image2font/master/LICENSE).
