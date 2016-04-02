@@ -1,0 +1,79 @@
+@font-face {
+  font-family: neko;
+  src: url("../font/neko.ttf");
+}
+
+header, article, menu, footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin-left: 28rem;
+  margin-right: 28rem;
+}
+
+aside {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  bottom: 0px;
+  right: 0px;
+  width: calc(28rem);
+  height: 100px;
+
+}
+
+aside pre {
+  margin: inherit;
+}
+
+header {
+  margin-top: 1cm;
+}
+
+h1, h2, h3, h4, h5, h6, pre, p {
+  font-family: neko;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  text-transform: capitalize;
+}
+
+h2, h3, h4, h5, h6, p {
+  margin: 0px;
+}
+
+h2, h3, h4, h5, h6 {
+  color: rgba(17, 17, 17, 1);
+}
+
+h1 {
+  font-size: 3cm;
+}
+
+h2 {
+  font-size: 1.7cm;
+}
+
+h3, h4, h5, h6 {
+  font-size: 1.3cm;
+}
+pre, p {
+  font-size: 0.5cm;
+}
+
+article > pre {
+  background-color: rgba(238, 238, 238, 1);
+  overflow-x: auto;
+}
+
+footer {
+  margin-bottom: 10cm;
+}
+
+a {
+  text-decoration: none;
+}

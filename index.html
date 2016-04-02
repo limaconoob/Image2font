@@ -1,0 +1,80 @@
+<title>image2font</title>
+<link rel="stylesheet" href="css/main.css" >
+<header>
+  <h1>image2font</h1>
+  <p>
+    <a href="https://github.com/limaconoob/Image2font">image2font</a> is a <b>image's converter to font written</b> in <a href="https://fontforge.github.io/en-US">fontforge</a>'s <a href="http://fontforge.github.io/en-US/documentation/scripting/python">python script</a>.
+  </p>
+</header>
+<article>
+  <h2>Usage</h2>
+    <p>Short example:</p>
+    <pre>
+git clone https://github.com/limaconoob/Image2font.git image2font && cd image2font
+python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png
+    </pre>
+    <h3>With Docker</h3>
+    <pre>
+make build run
+
+export IMAGE=neko.png
+export FONT_INPUT=sazanami-gothic.ttf
+export FONT_OUTPUT=neko.ttf
+
+docker cp $(IMAGE) $(make get):/root/image2font/$(IMAGE)
+docker cp $(FONT_INPUT) $(make get):/root/image2font/$(FONT_INPUT)
+docker exec $(make get) python image2font --input-font $(FONT_INPUT) --output-font $(FONT_OUTPUT) $(IMAGE)
+docker cp $(make get):/root/image2font/$(FONT_OUTPUT) $(FONT_OUTPUT)
+    </pre>
+    <h4>CLI</h4>
+    <p>See command <b>help</b>:</p>
+    <pre>Usage:  [options] arg1.png [...]
+
+  Options:
+    --version             show program's version number and exit
+    -h, --help            show this help message and exit
+    -w GRID_WIDTH, --grid-width=GRID_WIDTH
+                          Sets the cell width unity from picture.
+    -a GRID_HEIGHT, --grid-heigth=GRID_HEIGHT
+                          Sets the cell height unity from picture.
+    -c CELL_WIDTH, --cell-width=CELL_WIDTH
+                          Sets the cell width pixel from picture.
+    -b CELL_HEIGHT, --cell-heigth=CELL_HEIGHT
+                          Sets the cell height pixel from picture.
+    -i INPUT, --input-font=INPUT
+                          Modify this existent font.
+    -o OUTPUT, --output-font=OUTPUT
+                          Specify the namefont to create.
+    -s INDEX, --start-index=INDEX
+                          Start to write the glyphs at 0xE000's index if there
+                          is `input-font` else at 0x0000.
+    -n NAME, --name-font=NAME
+                          Is the name of font.
+    </pre>
+</article>
+<footer>
+  <h2>License</h2>
+  <p>
+    <a href="https://github.com/limaconoob/Image2font">image2font</a>'s code in this repo uses the <a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a> <a href="https://raw.githubusercontent.com/limaconoob/Image2font/master/LICENSE">license</a>.
+  </p>
+
+  <h3>Dependencies</h3>
+  <p>Many thanks goes to <b>Command/program</b>'s project:</p>
+  <ul>
+    <li><a href="https://github.com/fontforge/fontforge">fontforge</a></li>
+    <li><a href="https://www.python.org/ftp/python">python</a></li>
+    <li><a href="https://github.com/ImageMagick/ImageMagick">convert</a></li>
+    <li><a href="http://potrace.sourceforge.net">potrace</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Catgirl">Wikipedia (for the picture neko!)</a></li>
+  </lu>
+</footer>
+<aside>
+  <pre>
+&#xE000;&#xE001;&#xE002;&#xE003;&#xE004;&#xE005;&#xE006;&#xE007;&#xE008;&#xE009;
+&#xE00A;&#xE00B;&#xE00C;&#xE00D;&#xE00E;&#xE00F;&#xE010;&#xE011;&#xE012;&#xE013;
+&#xE014;&#xE015;&#xE016;&#xE017;&#xE018;&#xE019;&#xE01A;&#xE01B;&#xE01C;&#xE01D;
+&#xE01E;&#xE01F;&#xE020;&#xE021;&#xE022;&#xE023;&#xE024;&#xE025;&#xE026;&#xE027;
+&#xE028;&#xE029;&#xE02A;&#xE02B;&#xE02C;&#xE02D;&#xE02E;&#xE02F;&#xE030;&#xE031;
+&#xE032;&#xE033;&#xE034;&#xE035;&#xE036;&#xE037;&#xE038;&#xE039;&#xE03A;&#xE03B;
+<pre>
+</aside>
