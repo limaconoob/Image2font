@@ -8,4 +8,4 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential ca-certificates git fontforge python python-fontforge imagemagick potrace
 RUN git clone https://github.com/limaconoob/Image2font.git /root/image2font
 ENTRYPOINT bash
-WORKDIR $HOME
+WORKDIR $HOME/image2font
