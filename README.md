@@ -1,11 +1,13 @@
 # Image2font
 
-[![travis-badge][]][travis]
+[![travis-badge][]][travis] [![license-badge][]][license]
 
 [travis-badge]: https://travis-ci.org/limaconoob/Image2font.svg?branch=master&style=flat-square
 [travis]: https://travis-ci.org/limaconoob/Image2font
+[license-badge]: http://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square
+[license]: https://github.com/limaconoob/Image2font/blob/master/LICENSE
 
-##### Usage:
+##### Usage
 By example:
 ```shell
 git clone https://github.com/limaconoob/Image2font.git image2font && cd image2font
@@ -39,13 +41,14 @@ Options:
                         Is the name of font.
 ```
 
-#### License:
+#### License
 
 **image2font**'s code in this repo uses the [GNU GPL v3](http://www.gnu.org/licenses/gpl-3.0.html) [license](https://raw.githubusercontent.com/limaconoob/Image2font/master/LICENSE).
 
-##### Dependencies:
-Many thanks goes to **Command/program**'s project:
-* [python](https://www.python.org/ftp/python).
-* [fontforge](https://github.com/fontforge/fontforge).
-* [convert](https://github.com/ImageMagick/ImageMagick).
-* [potrace](http://potrace.sourceforge.net).
+##### Dependencies
+Many thanks goes to **command/etc**'s project:
+* [python](https://www.python.org/ftp/python)
+* [fontforge](https://github.com/fontforge/fontforge)
+* [convert](https://github.com/ImageMagick/ImageMagick)
+* [potrace](http://potrace.sourceforge.net)
+* [Wikipedia (for the picture **neko**!)](https://en.wikipedia.org/wiki/Catgirl)
