@@ -11,5 +11,6 @@ export FONT_OUTPUT=neko.ttf
 docker cp $IMAGE $(make get):/root/image2font/$IMAGE
 docker cp $FONT_INPUT $(make get):/root/image2font/$FONT_INPUT
 docker exec $(make get) python image2font --input-font $FONT_INPUT --output-font $FONT_OUTPUT $IMAGE
-docker cp $(make get):/root/image2font/$(FONT_OUTPUT) $FONT_OUTPUT
+docker cp $(make get):/root/image2font/$FONT_OUTPUT $FONT_OUTPUT
+cp -f $FONT_OUTPUT $HOME/.local/share/fonts
 ```

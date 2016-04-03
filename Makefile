@@ -19,17 +19,17 @@ run: build
 endif
 
 stop:
-	docker stop $(DOCKER_PS) ;
+	docker stop -f $(DOCKER_PS) ;
 
 rm: stop
-	docker rm $(DOCKER_PS) ;
+	docker rm -f $(DOCKER_PS) ;
 
 ifeq "$(DOCKER_PS)" ""
 rmi: stop
-	docker rmi $(DOCKER_ID) ;
+	docker rmi -f $(DOCKER_ID) ;
 else
 rmi: rm
-	docker rmi $(DOCKER_ID) ;
+	docker rmi -f $(DOCKER_ID) ;
 endif
 
 get:
