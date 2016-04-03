@@ -71,12 +71,14 @@ class Core:
         """ The `run` function resizes, crops and runs the `svg2pnm` module. """
         to_ttf = ToTtf(self.option);
         vectors = [];
+        index = 0;
 
         self.resize(source);
         self.crop();
-        for x in range(self.option.cell_width / self.option.grid_width):
-            for y in range(self.option.cell_height / self.option.grid_height):
-                index = str(x + y);
+        width =  self.option.grid_width * self.option.cell_width;
+        height = self.option.grid_height * self.option.cell_height;
+        for x in range(width / self.option.cell_width):
+            for y in range(height / self.option.cell_height):
                 coordinate = str(x) + '-' + str(y);
                 self.to_pnm(index, coordinate);
                 self.to_svg(coordinate);
@@ -84,6 +86,7 @@ class Core:
                     self.build + '/' + self.option.name \
                                + '.' + coordinate + ".svg"
                 );
+                index += 1;
         to_ttf.run(vectors);
 
     # Command:

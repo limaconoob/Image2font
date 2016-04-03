@@ -6,6 +6,13 @@
 [travis]: https://travis-ci.org/limaconoob/Image2font
 
 ##### Usage:
+By example:
+```shell
+git clone https://github.com/limaconoob/Image2font.git image2font && cd image2font
+python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png
+cp -f sazanami-gothic.ttf $HOME/.local/share/fonts
+```
+
 For more information, see the **help**'s command:
 ```text
 Usage:  [options] arg1.png [...]
@@ -32,21 +39,13 @@ Options:
                         Is the name of font.
 ```
 
-By example:
-```shell
-git clone https://github.com/limaconoob/Image2font.git image2font && cd image2font
-python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png
-```
+#### License:
 
-#### Dependencies:
-Many thanks goes to:
+**image2font**'s code in this repo uses the [GNU GPL v3](http://www.gnu.org/licenses/gpl-3.0.html) [license](https://raw.githubusercontent.com/limaconoob/Image2font/master/LICENSE).
 
-##### **Command/program**'s project:
+##### Dependencies:
+Many thanks goes to **Command/program**'s project:
 * [python](https://www.python.org/ftp/python).
 * [fontforge](https://github.com/fontforge/fontforge).
 * [convert](https://github.com/ImageMagick/ImageMagick).
 * [potrace](http://potrace.sourceforge.net).
-
-#### License:
-
-**image2font**'s code in this repo uses the [GNU GPL v3](http://www.gnu.org/licenses/gpl-3.0.html) [license](https://raw.githubusercontent.com/limaconoob/Image2font/master/LICENSE).
