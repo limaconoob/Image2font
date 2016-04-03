@@ -22,12 +22,11 @@ aside {
   bottom: 0px;
   right: 0px;
   width: calc(28rem);
-  height: 100px;
-
 }
 
 aside pre {
   margin: inherit;
+  font-size: 1.5cm;
 }
 
 header {
@@ -61,11 +60,11 @@ h2 {
 h3, h4, h5, h6 {
   font-size: 1.3cm;
 }
-pre, p {
+article pre, p {
   font-size: 0.5cm;
 }
 
-article > pre {
+article pre {
   background-color: rgba(238, 238, 238, 1);
   overflow-x: auto;
 }
