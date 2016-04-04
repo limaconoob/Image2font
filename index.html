@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <title>image2font</title>
 <link rel="stylesheet" href="css/main.css" />
-<header>
-  <h1>image2font</h1>
-  <p>
-    <a href="https://github.com/limaconoob/Image2font">image2font</a> is a <b>image's converter to font written</b> in <a href="https://fontforge.github.io/en-US">fontforge</a>'s <a href="http://fontforge.github.io/en-US/documentation/scripting/python">python script</a>.
-  </p>
-</header>
-<article>
-  <h2>Usage</h2>
-    <p>Short example:</p>
-    <pre>
+<nav>
+  <menu>
+    <p>table of contents</p>
+    <ul>
+      <li><a href="#usage">usage</a>
+        <ul>
+          <li><a href="#docker">docker</a></li>
+          <li><a href="#cli">CLI</a></li>
+        </ul>
+      </li>
+      <li><a href="#license">license</a>
+        <ul>
+          <li><a href="#dependencies">dependencies</a></li>
+        </ul>
+      </li>
+    </ul>
+  </menu>
+</nav>
+<section>
+  <header>
+    <h1>the image2font script<a href="#">&#x00B6</a></h1>
+    <p>
+      <a href="https://github.com/limaconoob/Image2font">image2font</a> is a <b>image's converter to font written</b> in <a href="https://fontforge.github.io/en-US">fontforge</a>'s <a href="http://fontforge.github.io/en-US/documentation/scripting/python">python script</a>.
+    </p>
+  </header>
+  <article>
+    <h2 id="usage">usage<a href="#usage">&#x00B6</a></h2>
+      <p>short example:</p>
+      <pre>
 git clone https://github.com/limaconoob/Image2font.git image2font && cd image2font
-python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png
-    </pre>
-    <h3>With Docker</h3>
-    <pre>
+python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png</pre>
+      <h3 id="docker">with docker<a href="#docker">&#x00B6</a></h3>
+        <pre>
 make build run
 
 export IMAGE=neko.png
@@ -25,11 +43,10 @@ export FONT_OUTPUT=neko.ttf
 docker cp $(IMAGE) $(make get):/root/image2font/$(IMAGE)
 docker cp $(FONT_INPUT) $(make get):/root/image2font/$(FONT_INPUT)
 docker exec $(make get) python image2font --input-font $(FONT_INPUT) --output-font $(FONT_OUTPUT) $(IMAGE)
-docker cp $(make get):/root/image2font/$(FONT_OUTPUT) $(FONT_OUTPUT)
-    </pre>
-    <h4>CLI</h4>
-    <p>See command <b>help</b>:</p>
-    <pre>Usage:  [options] arg1.png [...]
+docker cp $(make get):/root/image2font/$(FONT_OUTPUT) $(FONT_OUTPUT)</pre>
+        <h4 id="cli">CLI<a href="#cli">&#x00B6</a></h4>
+          <p>see command <b>help</b>:</p>
+          <pre>Usage:  [options] arg1.png [...]
 
   Options:
     --version             show program's version number and exit
@@ -50,25 +67,24 @@ docker cp $(make get):/root/image2font/$(FONT_OUTPUT) $(FONT_OUTPUT)
                           Start to write the glyphs at 0xE000's index if there
                           is `input-font` else at 0x0000.
     -n NAME, --name-font=NAME
-                          Is the name of font.
-    </pre>
-</article>
-<footer>
-  <h2>License</h2>
-  <p>
-    <a href="https://github.com/limaconoob/Image2font">image2font</a>'s code in this repo uses the <a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a> <a href="https://raw.githubusercontent.com/limaconoob/Image2font/master/LICENSE">license</a>.
-  </p>
-
-  <h3>Dependencies</h3>
-  <p>Many thanks goes to <b>Command/program</b>'s project:</p>
-  <ul>
-    <li><a href="https://github.com/fontforge/fontforge">fontforge</a></li>
-    <li><a href="https://www.python.org/ftp/python">python</a></li>
-    <li><a href="https://github.com/ImageMagick/ImageMagick">convert</a></li>
-    <li><a href="http://potrace.sourceforge.net">potrace</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Catgirl">Wikipedia (for the picture neko!)</a></li>
-  </ul>
-</footer>
+                          Is the name of font.</pre>
+  </article>
+  <footer>
+    <h2 id="license">license<a href="#license">&#x00B6</a></h2>
+      <p>
+        <a href="https://github.com/limaconoob/Image2font">image2font</a>'s code in this repo uses the <a href="http://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a> <a href="https://raw.githubusercontent.com/limaconoob/Image2font/master/LICENSE">license</a>.
+      </p>
+    <h3 id="dependencies">dependencies<a href="#dependencies">&#x00B6</a></h3>
+      <p>many thanks goes to <b>command/program</b>'s project:</p>
+      <ul>
+        <li><a href="https://github.com/fontforge/fontforge">fontforge</a></li>
+        <li><a href="https://www.python.org/ftp/python">python</a></li>
+        <li><a href="https://github.com/ImageMagick/ImageMagick">convert</a></li>
+        <li><a href="http://potrace.sourceforge.net">potrace</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Catgirl">Wikipedia (for the picture neko!)</a></li>
+      </ul>
+  </footer>
+</section>
 <aside>
   <pre>
 &#xE000;&#xE001;&#xE002;&#xE003;&#xE004;&#xE005;&#xE006;&#xE007;&#xE008;&#xE009;
