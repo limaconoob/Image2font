@@ -2,6 +2,9 @@
   0% {
     content: "Hello";
   }
+  50% {
+    content: "Hey, I'm a text";
+  }
   100% {
     content: "What's up?";
   }
@@ -61,8 +64,7 @@ aside pre::before {
   content: "";
   animation: message 10s linear infinite alternate;
   position: absolute;
-  height: 125%;
-  bottom: 0px;
+  bottom: 125%;
 }
 
 section header h1 {
