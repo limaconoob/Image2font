@@ -66,7 +66,7 @@ aside pre::before {
   bottom: 0px;
 }
 
-header h1 {
+section header h1 {
   color: rgba(62, 67, 73, 1);
   text-transform: capitalize;
   font-weight: normal;
@@ -76,7 +76,7 @@ header h1 {
   margin-bottom: 0px;
 }
 
-header h2, article h2, footer h2 {
+section header h2, article h2, footer h2 {
   color: rgba(62, 67, 73, 1);
   text-transform: capitalize;
   font-weight: normal;
@@ -85,7 +85,7 @@ header h2, article h2, footer h2 {
   margin: 30px 0px 10px 0px;
 }
 
-header h3, article h3, footer h3 {
+section header h3, article h3, footer h3 {
   color: rgba(62, 67, 73, 1);
   text-transform: capitalize;
   font-weight: normal;
@@ -94,7 +94,7 @@ header h3, article h3, footer h3 {
   margin: 30px 0px 10px 0px;
 }
 
-header h4, article h4, footer h4 {
+section header h4, article h4, footer h4 {
   color: rgba(62, 67, 73, 1);
   text-transform: capitalize;
   font-weight: normal;
@@ -119,9 +119,9 @@ nav menu {
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
-  width: 40%;
   height: 100%;
   padding: 0px 0px 0px 0px;
+  margin-right: 50px;
 }
 nav menu ul {
   list-style: square;
@@ -168,23 +168,23 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   padding: 0 4px;
 }
 
-header p a, article p a, footer p a, footer li a, aside p a, nav p a {
+section header p a, article p a, footer p a, footer li a, aside p a, nav p a {
   color: rgba(62, 67, 73, 1);
   text-decoration: none;
   border-bottom: 1px dotted #999;
 }
 
-header p a, article p a, footer p a, footer li a, aside p a, nav p a {
+section header p a, article p a, footer p a, footer li a, aside p a, nav p a {
   text-transform: capitalize;
 }
 
-header p, article p, footer p, aside p {
+section header p, article p, footer p, aside p {
   font-family: 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
   font-size: 17px;
   color: rgba(62, 67, 73, 1);
   line-height: 1.4em;
 }
 
-header p:first-letter, article p:first-letter, footer p:first-letter {
+section header p:first-letter, article p:first-letter, footer p:first-letter {
   text-transform: capitalize
 }
