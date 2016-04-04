@@ -13,7 +13,7 @@
       </li>
       <li><a href="#license">license</a>
         <ul>
-          <li><a href="#dependencies">dependencies</a></li>
+          <li><a href="#dependencies">thank-you</a></li>
         </ul>
       </li>
     </ul>
@@ -31,7 +31,8 @@
       <p>short example:</p>
       <pre>
 git clone https://github.com/limaconoob/Image2font.git image2font && cd image2font
-python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png</pre>
+python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png
+cp -f sazanami-gothic.ttf $HOME/.local/share/fonts</pre>
       <h3 id="docker">with docker<a href="#docker">&#x00B6;</a></h3>
         <pre>
 make build run
@@ -40,10 +41,11 @@ export IMAGE=neko.png
 export FONT_INPUT=sazanami-gothic.ttf
 export FONT_OUTPUT=neko.ttf
 
-docker cp $(IMAGE) $(make get):/root/image2font/$(IMAGE)
-docker cp $(FONT_INPUT) $(make get):/root/image2font/$(FONT_INPUT)
-docker exec $(make get) python image2font --input-font $(FONT_INPUT) --output-font $(FONT_OUTPUT) $(IMAGE)
-docker cp $(make get):/root/image2font/$(FONT_OUTPUT) $(FONT_OUTPUT)</pre>
+docker cp $IMAGE $(make get):/root/image2font/$IMAGE
+docker cp $FONT_INPUT $(make get):/root/image2font/$FONT_INPUT
+docker exec $(make get) python image2font --input-font $FONT_INPUT --output-font $FONT_OUTPUT $IMAGE
+docker cp $(make get):/root/image2font/$FONT_OUTPUT $FONT_OUTPUT
+cp -f $FONT_OUTPUT $HOME/.local/share/fonts</pre>
         <h4 id="cli">CLI<a href="#cli">&#x00B6;</a></h4>
           <p>see command <b>help</b>:</p>
           <pre>Usage:  [options] arg1.png [...]
