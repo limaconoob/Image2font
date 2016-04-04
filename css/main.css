@@ -1,18 +1,50 @@
+@font-face {
+  font-family: neko;
+  src: url("../font/neko.ttf");
+}
+
 @keyframes message {
   0% {
     content: "Hello";
   }
-  50% {
+  30% {
     content: "Hey, I'm a text";
+  }
+  60% {
+    content: "My name is Wikipe-tan";
   }
   100% {
     content: "What's up?";
   }
 }
 
-@font-face {
-  font-family: neko;
-  src: url("../font/neko.ttf");
+#usage::after,
+#docker::after,
+#cli::after,
+#license::after,
+#dependencies::after {
+  position: fixed;
+  display: flex;
+  left: 0px;
+  width: 42%;
+  background-color: red;
+  opacity: 0;
+}
+
+#usage::after {
+  content: "usage";
+}
+#docker::after {
+  content: "docker";
+}
+#cli::after {
+  content: "cli";
+}
+#license::after {
+  content: "license";
+}
+#dependencies::after {
+  content: "dependencies";
 }
 
 body {
@@ -62,9 +94,14 @@ aside pre {
 
 aside pre::before {
   content: "";
-  animation: message 15s linear infinite alternate;
+  animation: message 15s linear infinite reverse;
   position: absolute;
   bottom: 125%;
+}
+
+aside:hover pre::before {
+  content: "Hey don't touch me";
+  animation: none;
 }
 
 section header h1 {
