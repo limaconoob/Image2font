@@ -62,7 +62,7 @@ aside pre {
 
 aside pre::before {
   content: "";
-  animation: message 10s linear infinite alternate;
+  animation: message 15s linear infinite alternate;
   position: absolute;
   bottom: 125%;
 }
