@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <title>image2font</title>
+<meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" href="css/main.css" />
 <nav>
   <menu>
@@ -18,6 +19,14 @@
       </li>
     </ul>
   </menu>
+  <aside>
+    <pre>
+&#xE000;&#xE001;&#xE002;&#xE003;&#xE004;&#xE005;&#xE006;&#xE007;&#xE008;&#xE009;
+&#xE00A;&#xE00B;&#xE00C;&#xE00D;&#xE00E;&#xE00F;&#xE010;&#xE011;&#xE012;&#xE013;
+&#xE014;&#xE015;&#xE016;&#xE017;&#xE018;&#xE019;&#xE01A;&#xE01B;&#xE01C;&#xE01D;
+&#xE01E;&#xE01F;&#xE020;&#xE021;&#xE022;&#xE023;&#xE024;&#xE025;&#xE026;&#xE027;
+&#xE028;&#xE029;&#xE02A;&#xE02B;&#xE02C;&#xE02D;&#xE02E;&#xE02F;&#xE030;&#xE031;</pre>
+  </aside>
 </nav>
 <section>
   <header>
@@ -34,7 +43,9 @@ git clone https://github.com/limaconoob/Image2font.git image2font && cd image2fo
 python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png
 cp -f sazanami-gothic.ttf $HOME/.local/share/fonts</pre>
       <h3 id="docker">with docker<a href="#docker">&#x00B6;</a></h3>
+        <p>to more detail, see <a href="https://github.com/limaconoob/Image2font/tree/docker">docker</a> branch:</p>
         <pre>
+git clone -b docker https://github.com/limaconoob/Image2font.git image2font && cd image2font
 make build run
 
 export IMAGE=neko.png
@@ -87,11 +98,3 @@ cp -f $FONT_OUTPUT $HOME/.local/share/fonts</pre>
       </ul>
   </footer>
 </section>
-<aside>
-  <pre>
-&#xE000;&#xE001;&#xE002;&#xE003;&#xE004;&#xE005;&#xE006;&#xE007;&#xE008;&#xE009;
-&#xE00A;&#xE00B;&#xE00C;&#xE00D;&#xE00E;&#xE00F;&#xE010;&#xE011;&#xE012;&#xE013;
-&#xE014;&#xE015;&#xE016;&#xE017;&#xE018;&#xE019;&#xE01A;&#xE01B;&#xE01C;&#xE01D;
-&#xE01E;&#xE01F;&#xE020;&#xE021;&#xE022;&#xE023;&#xE024;&#xE025;&#xE026;&#xE027;
-&#xE028;&#xE029;&#xE02A;&#xE02B;&#xE02C;&#xE02D;&#xE02E;&#xE02F;&#xE030;&#xE031;</pre>
-</aside>

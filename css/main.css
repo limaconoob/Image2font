@@ -65,7 +65,13 @@ nav {
   justify-content: flex-start;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  width: 36%;
+  min-width: 36%;
+}
+
+@media screen and (max-width: 690px) {
+  nav {
+      display: none;
+  }
 }
 
 section {
@@ -76,30 +82,33 @@ section {
   justify-content: flex-start;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
+  min-width: 54%;
 }
 
-aside {
+nav aside {
   position: fixed;
-  text-align: center;
-  left: 0px;
   bottom: 0px;
   width: 36%;
+  text-align: center;
 }
 
-aside pre {
+nav aside pre {
   font-size: 1.3cm;
   font-family: neko;
   margin: inherit;
 }
 
-aside pre::before {
+nav aside pre::before {
   content: "";
   animation: message 15s linear infinite reverse;
   position: absolute;
+	white-space: pre-line;
   bottom: 125%;
+  left: 0px;
+  width: 100%;
 }
 
-aside:hover pre::before {
+nav aside:hover pre::before {
   content: "Hey don't touch me";
   animation: none;
 }
@@ -158,15 +167,16 @@ article pre {
 }
 
 nav menu {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
   height: 100%;
   padding: 0px 0px 0px 0px;
-  margin-right: 50px;
+  margin-left: calc(36% - 231px);
 }
+
 nav menu ul {
   list-style: square;
   list-style-position: inside;
@@ -212,17 +222,17 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   padding: 0 4px;
 }
 
-section header p a, article p a, footer p a, footer li a, aside p a, nav p a {
+section header p a, article p a, footer p a, footer li a, nav aside p a, nav p a {
   color: rgba(62, 67, 73, 1);
   text-decoration: none;
   border-bottom: 1px dotted #999;
 }
 
-section header p a, article p a, footer p a, footer li a, aside p a, nav p a {
+section header p a, article p a, footer p a, footer li a, nav aside p a, nav p a {
   text-transform: capitalize;
 }
 
-section header p, article p, footer p, aside p {
+section header p, article p, footer p, nav aside p {
   font-family: 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
   font-size: 17px;
   color: rgba(62, 67, 73, 1);
