@@ -50,6 +50,7 @@ if __name__ == '__main__':
     );
 
     arg = parser.parse_args();
+    arg[0].index = int(arg[0].index);
     if not bool(arg[0].input):
         arg[0].index = 0xe0000;
     if not bool(arg[0].name):

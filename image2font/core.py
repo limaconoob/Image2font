@@ -39,6 +39,7 @@ class ToTtf:
 
     def run (self, vectors):
         """ The `run` function appends all vector's glyph. """
+        print(self.index);
         for vector in vectors:
             glyph = self.font.createChar (
                 self.index,
