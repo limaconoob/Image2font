@@ -19,7 +19,7 @@ run: build
 endif
 
 stop:
-	docker stop -f $(DOCKER_PS) ;
+	docker stop $(DOCKER_PS) ;
 
 rm: stop
 	docker rm -f $(DOCKER_PS) ;
