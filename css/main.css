@@ -18,6 +18,18 @@
   }
 }
 
+.command {
+  color: rgba(132, 197, 204, 1);
+}
+
+.option {
+  color: rgba(147, 81, 182, 1);
+}
+
+.value {
+  color: rgba(72, 58, 170, 1);
+}
+
 #usage::after,
 #docker::after,
 #cli::after,

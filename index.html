@@ -39,47 +39,47 @@
     <h2 id="usage">usage<a href="#usage">&#x00B6;</a></h2>
       <p>short example:</p>
       <pre>
-git clone https://github.com/limaconoob/Image2font.git image2font && cd image2font
-python image2font --input-font tests/assets/ttf/sazanami-gothic.ttf tests/assets/neko_wikipe-tan.png
-cp -f sazanami-gothic.ttf $HOME/.local/share/fonts</pre>
+<span class="command">git</span> <span class="option">clone</span> <span class="value">https://github.com/limaconoob/Image2font.git</span> <span class="value">image2font</span> && <span class="command">cd</span> <span class="value">image2font</span>
+<span class="command">python</span> <span class="value">image2font</span> <span class="option">--input-font</span> <span class="value">tests/assets/ttf/sazanami-gothic.ttf</span> <span class="value">tests/assets/neko_wikipe-tan.png</span>
+<span class="command">cp</span> <span class="option">-f</span> <span class="value">sazanami-gothic.ttf</span> <span class="value">$HOME/.local/share/fonts</span></pre>
       <h3 id="docker">with docker<a href="#docker">&#x00B6;</a></h3>
         <p>to more detail, see <a href="https://github.com/limaconoob/Image2font/tree/docker">docker</a> branch:</p>
         <pre>
-git clone -b docker https://github.com/limaconoob/Image2font.git image2font && cd image2font
-make build run
+<span class="command">git</span> <span class="option">clone</span> <span class="option">-b</span> <span class="value">docker</span> <span class="value">https://github.com/limaconoob/Image2font.git</span> <span class="value">image2font</span> && <span class="command">cd</span> <span class="value">image2font</span>
+<span class="command">make</span> <span class="option">build</span> <span class="option">run</span>
 
-export IMAGE=neko.png
-export FONT_INPUT=sazanami-gothic.ttf
-export FONT_OUTPUT=neko.ttf
+<span class="command">export</span> <span class="option">IMAGE</span>=<span class="value">neko.png</span>
+<span class="command">export</span> <span class="option">FONT_INPUT</span>=<span class="value">sazanami-gothic.ttf</span>
+<span class="command">export</span> <span class="option">FONT_OUTPUT</span>=<span class="value">neko.ttf</span>
 
-docker cp $IMAGE $(make get):/root/image2font/$IMAGE
-docker cp $FONT_INPUT $(make get):/root/image2font/$FONT_INPUT
-docker exec $(make get) python image2font --input-font $FONT_INPUT --output-font $FONT_OUTPUT $IMAGE
-docker cp $(make get):/root/image2font/$FONT_OUTPUT $FONT_OUTPUT
-cp -f $FONT_OUTPUT $HOME/.local/share/fonts</pre>
+<span class="command">docker</span> <span class="option">cp</span> <span class="value">$IMAGE</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span>:<span class="value">/root/image2font/$IMAGE</span>
+<span class="command">docker</span> <span class="option">cp</span> <span class="value">$FONT_INPUT</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span>:<span class="value">/root/image2font/$FONT_INPUT</span>
+<span class="command">docker</span> <span class="option">exec</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span> <span class="command">python</span> <span class="value">image2font</span> <span class="option">--input-font</span> <span class="value">$FONT_INPUT</span> <span class="option">--output-font</span> <span class="value">$FONT_OUTPUT</span> <span class="value">$IMAGE</span>
+<span class="command">docker</span> <span class="option">cp</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span>:<span class="value">/root/image2font/$FONT_OUTPUT</span> <span class="value">$FONT_OUTPUT</span>
+<span class="command">cp</span> <span class="option">-f</span> <span class="value">$FONT_OUTPUT</span> <span class="value">$HOME/.local/share/fonts</span></pre>
         <h4 id="cli">CLI<a href="#cli">&#x00B6;</a></h4>
           <p>see command <b>help</b>:</p>
-          <pre>Usage:  [options] arg1.png [...]
+          <pre>Usage:  [<span class="option">options</span>] <span class="value">arg1.png</span> [<span class="value">...</span>]
 
   Options:
-    --version             show program's version number and exit
-    -h, --help            show this help message and exit
-    -w GRID_WIDTH, --grid-width=GRID_WIDTH
+    <span class="option">--version</span>             show program's version number and exit
+    <span class="option">-h</span>, <span class="option">--help</span>            show this help message and exit
+    <span class="option">-w</span> <span class="value">GRID_WIDTH</span>, <span class="option">--grid-width</span>=<span class="value">GRID_WIDTH</span>
                           Sets the cell width unity from picture.
-    -a GRID_HEIGHT, --grid-heigth=GRID_HEIGHT
+    <span class="option">-a</span> <span class="value">GRID_HEIGHT</span>, <span class="option">--grid-heigth</span>=<span class="value">GRID_HEIGHT</span>
                           Sets the cell height unity from picture.
-    -c CELL_WIDTH, --cell-width=CELL_WIDTH
+    <span class="option">-c</span> <span class="value">CELL_WIDTH</span>, <span class="option">--cell-width</span>=<span class="value">CELL_WIDTH</span>
                           Sets the cell width pixel from picture.
-    -b CELL_HEIGHT, --cell-heigth=CELL_HEIGHT
+    <span class="option">-b</span> <span class="value">CELL_HEIGHT</span>, <span class="option">--cell-heigth</span>=<span class="value">CELL_HEIGHT</span>
                           Sets the cell height pixel from picture.
-    -i INPUT, --input-font=INPUT
+    <span class="option">-i</span> <span class="value">INPUT</span>, <span class="option">--input-font</span>=<span class="value">INPUT</span>
                           Modify this existent font.
-    -o OUTPUT, --output-font=OUTPUT
+    <span class="option">-o</span> <span class="value">OUTPUT</span>, <span class="option">--output-font</span>=<span class="value">OUTPUT</span>
                           Specify the namefont to create.
-    -s INDEX, --start-index=INDEX
-                          Start to write the glyphs at 0xE000's index if there
-                          is `input-font` else at 0x0000.
-    -n NAME, --name-font=NAME
+    <span class="option">-s</span> <span class="value">INDEX</span>, <span class="option">--start-index</span>=<span class="value">INDEX</span>
+                          Start to write the glyphs at <span class="value">0xE000</span>'s index if there
+                          is `input-font` else at <span class="value">0x0000</span>.
+    <span class="option">-n</span> <span class="value">NAME</span>, <span class="option">--name-font</span>=<span class="value">NAME</span>
                           Is the name of font.</pre>
   </article>
   <footer>
