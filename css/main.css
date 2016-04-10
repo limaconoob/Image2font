@@ -18,6 +18,22 @@
   }
 }
 
+
+@keyframes visible {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .command {
   color: rgba(132, 197, 204, 1);
 }
@@ -30,33 +46,61 @@
   color: rgba(72, 58, 170, 1);
 }
 
-#usage::after,
-#docker::after,
-#cli::after,
-#license::after,
-#dependencies::after {
+h1::after,
+h2::after,
+h3::after,
+h4::after,
+h5::after,
+h6::after {
   position: fixed;
   display: flex;
+  overflow-y: scroll;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  bottom: 312px;
   left: 0px;
-  width: 42%;
-  background-color: red;
+  padding-left: 1.5%;
+  margin-right: 1.5%;
+  width: 20%;
+  height: 200px;
+  white-space: pre-line;
+  font-size: 1.3cm;
+  font-family: neko;
+  background-color: white;
+  color: black;
+}
+
+#welcome:target::after {
+  content: "welcome";
+  animation: visible 10s linear 1 normal;
   opacity: 0;
 }
 
-#usage::after {
+#usage:target::after {
   content: "usage";
+  animation: visible 10s linear 1 normal;
+  opacity: 0;
 }
-#docker::after {
-  content: "docker";
+#docker:target::after {
+  content: "docker = marcel";
+  animation: visible 10s linear 1 normal;
+  opacity: 0;
 }
-#cli::after {
-  content: "cli";
+#cli:target::after {
+  content: "python image2font --help";
+  animation: visible 10s linear 1 normal;
+  opacity: 0;
 }
-#license::after {
-  content: "license";
+#license:target::after {
+  content: "by @limaconoob and @adjivas";
+  animation: visible 10s linear 1 normal;
+  opacity: 0;
 }
-#dependencies::after {
-  content: "dependencies";
+#dependencies:target::after {
+  content: "Wikipedia \2665";
+  animation: visible 10s linear 1 normal;
+  opacity: 0;
 }
 
 body {
@@ -70,20 +114,17 @@ body {
 }
 
 nav {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  min-width: 36%;
-}
-
-@media screen and (max-width: 690px) {
-  nav {
-      display: none;
-  }
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  width: 23%;
 }
 
 section {
@@ -94,13 +135,13 @@ section {
   justify-content: flex-start;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  min-width: 54%;
+  width: 54%;
 }
 
 nav aside {
-  position: fixed;
+  position: relative;
   bottom: 0px;
-  width: 36%;
+  width: 100%;
   text-align: center;
 }
 
@@ -112,12 +153,22 @@ nav aside pre {
 
 nav aside pre::before {
   content: "";
+  overflow-y: scroll;
   animation: message 15s linear infinite reverse;
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 	white-space: pre-line;
+  width: 85.5%;
+  height: 200px;
   bottom: 125%;
   left: 0px;
-  width: 100%;
+  margin-left: 8%;
+  margin-right: 8%;
+  background-color: white;
+  color: black;
 }
 
 nav aside:hover pre::before {
@@ -162,6 +213,13 @@ section header h4, article h4, footer h4 {
   margin: 30px 0px 10px 0px;
 }
 
+section header h1::after, article h1::after, footer h1::after,
+section header h2::after, article h2::after, footer h2::after,
+section header h3::after, article h3::after, footer h3::after,
+section header h4::after, article h4::after, footer h4::after {
+  text-transform: none;
+}
+
 article {
   position: relative;
   display: block;
@@ -179,14 +237,14 @@ article pre {
 }
 
 nav menu {
-  position: fixed;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
-  height: 100%;
   padding: 0px 0px 0px 0px;
-  margin-left: calc(36% - 231px);
+  margin: 40px 0px 0px 0px;
+  height: 100%;
 }
 
 nav menu ul {
