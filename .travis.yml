@@ -1,0 +1,6 @@
+
+services:
+  - docker
+
+install:
+  - make build
