@@ -1,4 +1,2 @@
-sudo: required
+sudo: false
 
-services:
-  - docker
