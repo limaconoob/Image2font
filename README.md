@@ -1,5 +1,12 @@
 # Image2font - Docker
 
+[![travis-badge][]][travis] [![license-badge][]][license]
+
+[travis-badge]: https://travis-ci.org/limaconoob/Image2font.svg?branch=docker&style=flat-square
+[travis]: https://travis-ci.org/limaconoob/Image2font
+[license-badge]: http://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square
+[license]: https://github.com/limaconoob/Image2font/blob/docker/LICENSE
+
 ##### How to use:
 ```shell
 make build run
