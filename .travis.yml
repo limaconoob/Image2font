@@ -2,5 +2,5 @@
 services:
   - docker
 
-install:
+script:
   - make build
