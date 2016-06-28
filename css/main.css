@@ -143,12 +143,18 @@ nav aside {
   bottom: 0px;
   width: 100%;
   text-align: center;
+  color: rgba(120, 166, 171, 0.4);
+}
+
+nav aside:hover {
+  color: rgba(120, 166, 171, 1.0);
 }
 
 nav aside pre {
-  font-size: 1.3cm;
-  font-family: neko;
   margin: inherit;
+  outline: none;
+  font-size: 3vh;
+  font-family: neko;
 }
 
 nav aside pre::before {
@@ -160,7 +166,7 @@ nav aside pre::before {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-	white-space: pre-line;
+  white-space: pre-line;
   width: 85.5%;
   height: 200px;
   bottom: 125%;
@@ -228,7 +234,7 @@ article {
 
 article pre {
   overflow-x: auto;
-  background-color: rgba(238, 238, 238, 1);
+  background-color: rgba(238, 238, 238, 0.8);
   font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
   font-size: 0.9em;
   padding: 7px 30px;
@@ -242,15 +248,17 @@ nav menu {
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
+  overflow: hidden;
   padding: 0px 0px 0px 0px;
   margin: 40px 0px 0px 0px;
   height: 100%;
+  width: 100%;
 }
 
 nav menu ul {
   list-style: square;
   list-style-position: inside;
-  width: 100%;
+  width: 75%;
 }
 
 nav menu > ul {
@@ -264,7 +272,7 @@ nav menu p {
   font-size: 24px;
   font-weight: normal;
   margin: 0px 0px 5px 0px;
-  width: 100%;
+  width: 75%;
 }
 
 nav menu a {
