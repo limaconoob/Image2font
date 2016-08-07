@@ -11,8 +11,8 @@
 ```shell
 make build run
 
-export IMAGE=neko.png
-export FONT_INPUT=sazanami-gothic.ttf
+export IMAGE=neko.png # curl https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Neko_Wikipe-tan.svg/220px-Neko_Wikipe-tan.svg.png > neko.png
+export FONT_INPUT=sazanami-gothic.ttf # curl https://github.com/limaconoob/Image2font/raw/master/tests/assets/ttf/sazanami-gothic.ttf > sazanami-gothic.ttf
 export FONT_OUTPUT=neko.ttf
 
 docker cp $IMAGE $(make get):/root/image2font/$IMAGE
