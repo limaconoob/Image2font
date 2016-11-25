@@ -48,18 +48,18 @@
 <span class="command">git</span> <span class="option">clone</span> <span class="option">-b</span> <span class="value">docker</span> <span class="value">https://github.com/limaconoob/Image2font.git</span> <span class="value">image2font</span> && <span class="command">cd</span> <span class="value">image2font</span>
 <span class="command">make</span> <span class="option">build</span> <span class="option">run</span>
 
-<span class="command">export</span> <span class="option">IMAGE</span>=<span class="value">neko.png</span>
+<span class="command">export</span> <span class="option">IMAGES</span>=<span class="value">neko.png</span>
 <span class="command">export</span> <span class="option">FONT_INPUT</span>=<span class="value">sazanami-gothic.ttf</span>
 <span class="command">export</span> <span class="option">FONT_OUTPUT</span>=<span class="value">neko.ttf</span>
 
-<span class="command">docker</span> <span class="option">cp</span> <span class="value">$IMAGE</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span>:<span class="value">/root/image2font/$IMAGE</span>
+<span class="command">docker</span> <span class="option">cp</span> <span class="value">$IMAGES</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span>:<span class="value">/root/image2font/$IMAGES</span>
 <span class="command">docker</span> <span class="option">cp</span> <span class="value">$FONT_INPUT</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span>:<span class="value">/root/image2font/$FONT_INPUT</span>
-<span class="command">docker</span> <span class="option">exec</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span> <span class="command">python</span> <span class="value">image2font</span> <span class="option">--input-font</span> <span class="value">$FONT_INPUT</span> <span class="option">--output-font</span> <span class="value">$FONT_OUTPUT</span> <span class="value">$IMAGE</span>
+<span class="command">docker</span> <span class="option">exec</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span> <span class="command">python</span> <span class="value">image2font</span> <span class="option">--input-font</span> <span class="value">$FONT_INPUT</span> <span class="option">--output-font</span> <span class="value">$FONT_OUTPUT</span> <span class="value">$IMAGES</span>
 <span class="command">docker</span> <span class="option">cp</span> <span class="value">$(<span class="command">make</span> <span class="option">get</span>)</span>:<span class="value">/root/image2font/$FONT_OUTPUT</span> <span class="value">$FONT_OUTPUT</span>
 <span class="command">cp</span> <span class="option">-f</span> <span class="value">$FONT_OUTPUT</span> <span class="value">$HOME/.local/share/fonts</span></pre>
         <h4 id="cli">CLI<a href="#cli">&#x00B6;</a></h4>
           <p>see command <b>help</b>:</p>
-          <pre>Usage:  [<span class="option">options</span>] <span class="value">arg1.png</span> [<span class="value">...</span>]
+          <pre>Usage:  [<span class="option">options</span>] <span class="value">[IMAGES]</span>...
 
   Options:
     <span class="option">--version</span>             show program's version number and exit
