@@ -1,5 +1,6 @@
 import fontforge;
 import subprocess;
+import sys
 
 class ToTtf:
     index = 0;
@@ -9,6 +10,8 @@ class ToTtf:
         if not option.input:
             self.font = fontforge.font();
         else:
+            print(option.input);
+#            sys.exit(1);
             self.font = fontforge.open(option.input);
             self.font.encoding = 'UnicodeBmp';
             self.font.version = '2.000;PS 1;hotconv 1.0.49;makeotf.lib2.0.14853';
@@ -29,7 +32,8 @@ class ToTtf:
             ));
             self.font.addLookupSubtable('liga', 'liga');
         self.output = option.output;
-        self.index = option.index;
+        self.start = option.index;
+        self.index = self.start;
 
     def __del__ (self):
         """ The `__del__` destructor function generates the output new font
@@ -39,7 +43,7 @@ class ToTtf:
 
     def run (self, vectors):
         """ The `run` function appends all vector's glyph. """
-        print(self.index);
+        start = self.index;
         for vector in vectors:
             glyph = self.font.createChar (
                 self.index,
@@ -60,6 +64,7 @@ class ToTtf:
                self.index,
             );
             self.index += 1;
+        print('sectors {}-{} writted'.format(start, self.index));
 
 class Core:
     build = "obj"; # source_build
@@ -67,10 +72,10 @@ class Core:
     def __init__(self, option):
         """ The `__init__` constructor function inits the source's option. """
         self.option = option;
+        self.to_ttf = ToTtf(self.option);
 
     def run (self, source):
         """ The `run` function resizes, crops and runs the `svg2pnm` module. """
-        to_ttf = ToTtf(self.option);
         vectors = [];
         index = 0;
 
@@ -88,7 +93,7 @@ class Core:
                                + '.' + coordinate + ".svg"
                 );
                 index += 1;
-        to_ttf.run(vectors);
+        self.to_ttf.run(vectors);
 
     # Command:
     # ```shell
