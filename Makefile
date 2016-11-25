@@ -2,7 +2,7 @@ DOCKER_IMAGE := debianimage2font
 DOCKER_ID := $(shell docker images --quiet=true --filter=label=name=$(DOCKER_IMAGE))
 DOCKER_PS := $(shell docker ps --all=true --quiet=true --filter=label=name=$(DOCKER_IMAGE))
 
-.PHONY: default build run stop rm rmi get
+.PHONY: default build run shell stop rm rmi get
 .SILENT: get
 
 default: build run
@@ -16,6 +16,14 @@ run:
 else
 run: build
 	docker run --detach=true -it $(DOCKER_ENVS) $(DOCKER_IMAGE) ;
+endif
+
+ifneq "$(DOCKER_PS)" ""
+shell:
+	docker run -it $(DOCKER_ENVS) $(DOCKER_IMAGE) /bin/bash ;
+else
+shell: build
+	docker run -it $(DOCKER_ENVS) $(DOCKER_IMAGE) /bin/bash ;
 endif
 
 stop:

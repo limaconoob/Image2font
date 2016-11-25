@@ -9,6 +9,7 @@
 
 ##### How to use:
 ```shell
+git clone -b docker https://github.com/limaconoob/Image2font.git Image2font && cd Image2font
 make build run
 
 export IMAGE=neko.png # curl https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Neko_Wikipe-tan.svg/220px-Neko_Wikipe-tan.svg.png > neko.png
